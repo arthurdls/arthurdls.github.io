@@ -9,9 +9,6 @@
 
   <p align="center">
     <img src="https://img.shields.io/github/forks/jigar-sable/next-portfolio?style=for-the-badge" />
-  <a href="https://jigarsable.vercel.app">
-    <img src="https://img.shields.io/static/v1?label=&message=View%20Demo&style=for-the-badge&color=black&logo=vercel" />
-  </a>
 </p>
 
 <p align="center">
@@ -103,18 +100,16 @@ Here are the steps to run the portfolio locally.
 
 ## Deployment 🚀
 
-1. Create a Vercel account and select "Import Project"
+1. Deploy the project to your preferred platform (e.g. GitHub Pages, Netlify, or any Node.js host).
 
-2. Select the forked repository and deploy
-
-3. Add the following environment variables in the Vercel dashboard:
+2. Add the following environment variables in your platform's dashboard:
    ```
    SENDGRID_API_KEY=XXXXXXXX
    NEXT_PUBLIC_FIREBASE_DATABASE_URL=XXXXXXXXXX
    MAIL_FROM=YOUR_MAIL_ID
    MAIL_TO=YOUR_MAIL_ID
    ```
-4. Hurray! You successfully deployed the portfolio🥳
+3. Hurray! You successfully deployed the portfolio🥳
 
 ## License 📄
 

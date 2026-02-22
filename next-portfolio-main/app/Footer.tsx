@@ -30,10 +30,6 @@ export default function Footer({ socials, name }: { socials: social[], name: str
                     <Link href={'https://nextjs.org'} target="_blank">
                         <Image alt="Next.js" width={45} height={45} src="/nextjs.svg" className={`${mounted && theme === 'dark' ? 'invert' : 'invert-0'} opacity-80 hover:opacity-100 transition-opacity`} />
                     </Link>
-                    <p className="text-sm">X</p>
-                    <Link href={'https://vercel.com'} target="_blank">
-                        <Image alt="Tailwind CSS" width={52} height={52} src="/vercel.svg" className={`${mounted && theme === 'dark' ? 'invert' : 'invert-0'} opacity-80 hover:opacity-100 transition-opacity`} />
-                    </Link>
                 </div>
 
                 {/* Social Links */}
