@@ -12,8 +12,7 @@ const Projects = ({ projectsData }: Props) => {
 
     const [projects, setProjects] = useState([...projectsData].reverse() as project[])
 
-    // Merge "Deep Learning" into "Machine Learning" for display and filtering
-    const displayCategories = [...Array.from(new Set(projects.map((s) => s.category === "Deep Learning" ? "Machine Learning" : s.category)))]
+    const displayCategories = [...Array.from(new Set(projects.map((s) => s.category)))]
 
     const [category, setCategory] = useState(displayCategories[0])
 
@@ -23,11 +22,7 @@ const Projects = ({ projectsData }: Props) => {
     const filterProjects = (cat: string) => {
         setViewAll(false)
         setCategory(cat)
-        if (cat.toLowerCase() === "machine learning") {
-            setFilteredProjects(projects.filter((p: project) => p.category === "Machine Learning" || p.category === "Deep Learning"));
-        } else {
-            setFilteredProjects(projects.filter((p: project) => p.category.toLowerCase() === cat.toLowerCase()));
-        }
+        setFilteredProjects(projects.filter((p: project) => p.category.toLowerCase() === cat.toLowerCase()));
     }
 
     useEffect(() => {

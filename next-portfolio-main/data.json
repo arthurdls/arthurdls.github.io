@@ -104,7 +104,7 @@
     {
       "name": "Transformer-based GenAl Health Diagnostics",
       "techstack": "TensorFlow, Python",
-      "category": "Deep Learning",
+      "category": "Machine Learning",
       "image": "https://media.geeksforgeeks.org/wp-content/cdn-uploads/20210114225740/10-Best-Web-Development-Project-Ideas-For-Beginners-in-2021.png",
       "links": {
         "code": "",
@@ -115,7 +115,7 @@
     {
       "name": "Deep Learning for Diabetic Retinopathy",
       "techstack": "Keras, TensorFlow, Python",
-      "category": "Machine Learning",
+      "category": "Data Science",
       "image": "https://media.geeksforgeeks.org/wp-content/cdn-uploads/20210114225740/10-Best-Web-Development-Project-Ideas-For-Beginners-in-2021.png",
       "links": {
         "code": "",
