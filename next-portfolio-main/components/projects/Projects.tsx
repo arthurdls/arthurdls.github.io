@@ -21,7 +21,7 @@ const Projects = ({ projectsData }: Props) => {
     const [selectedProject, setSelectedProject] = useState<project | null>(null);
 
     const filterKeywords = useMemo(
-        () => [...new Set(projects.flatMap((p) => p.keywords))].sort((a, b) => a.localeCompare(b)),
+        () => Array.from(new Set(projects.flatMap((p) => p.keywords))).sort((a, b) => a.localeCompare(b)),
         [projects]
     );
 
