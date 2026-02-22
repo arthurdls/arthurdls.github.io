@@ -9,6 +9,7 @@ type project = {
     image: string,
     techstack: string,
     category: string,
+    keywords: string[],
     links: {
         visit: string,
         code: string,

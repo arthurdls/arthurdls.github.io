@@ -94,6 +94,7 @@
       "name": "Robust Vision-Language Navigation",
       "techstack": "Perception, reasoning, human-robot interaction",
       "category": "Research",
+      "keywords": ["ML", "Robotics", "Perception", "Python"],
       "image": "https://media.geeksforgeeks.org/wp-content/cdn-uploads/20210114225740/10-Best-Web-Development-Project-Ideas-For-Beginners-in-2021.png",
       "links": {
         "code": "",
@@ -105,6 +106,7 @@
       "name": "Transformer-based GenAl Health Diagnostics",
       "techstack": "TensorFlow, Python",
       "category": "Machine Learning",
+      "keywords": ["ML", "Python", "TensorFlow"],
       "image": "https://media.geeksforgeeks.org/wp-content/cdn-uploads/20210114225740/10-Best-Web-Development-Project-Ideas-For-Beginners-in-2021.png",
       "links": {
         "code": "",
@@ -116,6 +118,7 @@
       "name": "Deep Learning for Diabetic Retinopathy",
       "techstack": "Keras, TensorFlow, Python",
       "category": "Data Science",
+      "keywords": ["ML", "Python", "TensorFlow", "Keras"],
       "image": "https://media.geeksforgeeks.org/wp-content/cdn-uploads/20210114225740/10-Best-Web-Development-Project-Ideas-For-Beginners-in-2021.png",
       "links": {
         "code": "",
@@ -127,6 +130,7 @@
       "name": "Arcturus RoboBoat 2025",
       "techstack": "Python, ROS2, YOLOv8",
       "category": "Autonomous Systems",
+      "keywords": ["C++", "Python", "Robotics", "ROS2", "Linux", "ML"],
       "image": "https://media.geeksforgeeks.org/wp-content/cdn-uploads/20210114225740/10-Best-Web-Development-Project-Ideas-For-Beginners-in-2021.png",
       "links": {
         "code": "",

@@ -1,5 +1,5 @@
 import { project } from "@/types/main";
-import { useEffect, useState } from "react";
+import { useMemo, useState } from "react";
 import { Link } from "react-scroll";
 import SectionWrapper from "../SectionWrapper";
 import ProjectCard from "./ProjectCard";
@@ -10,54 +10,86 @@ interface Props {
 
 const Projects = ({ projectsData }: Props) => {
 
-    const [projects, setProjects] = useState([...projectsData].reverse() as project[])
+    const [projects] = useState([...projectsData].reverse());
+    const [searchQuery, setSearchQuery] = useState("");
+    const [selectedKeywords, setSelectedKeywords] = useState<Set<string>>(new Set());
 
-    const displayCategories = [...Array.from(new Set(projects.map((s) => s.category)))]
+    const filterKeywords = useMemo(
+        () => [...new Set(projects.flatMap((p) => p.keywords))].sort((a, b) => a.localeCompare(b)),
+        [projects]
+    );
 
-    const [category, setCategory] = useState(displayCategories[0])
+    const filteredProjects = useMemo(() => {
+        let result = projects;
 
-    const [filteredProjects, setFilteredProjects] = useState(projects as project[])
-    const [viewAll, setViewAll] = useState(false)
+        if (searchQuery.trim()) {
+            const q = searchQuery.trim().toLowerCase();
+            result = result.filter(
+                (p) =>
+                    p.name.toLowerCase().includes(q) ||
+                    p.techstack.toLowerCase().includes(q) ||
+                    p.keywords.some((k) => k.toLowerCase().includes(q))
+            );
+        }
 
-    const filterProjects = (cat: string) => {
-        setViewAll(false)
-        setCategory(cat)
-        setFilteredProjects(projects.filter((p: project) => p.category.toLowerCase() === cat.toLowerCase()));
-    }
+        if (selectedKeywords.size > 0) {
+            result = result.filter((p) =>
+                p.keywords.some((k) => selectedKeywords.has(k))
+            );
+        }
 
-    useEffect(() => {
-        filterProjects(displayCategories.includes('MERN Stack') ? "MERN Stack" : displayCategories[0])
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
+        return result;
+    }, [projects, searchQuery, selectedKeywords]);
+
+    const toggleKeyword = (keyword: string) => {
+        setSelectedKeywords((prev) => {
+            const next = new Set(prev);
+            if (next.has(keyword)) next.delete(keyword);
+            else next.add(keyword);
+            return next;
+        });
+    };
 
     return (
         <SectionWrapper id="projects" className="mx-4 md:mx-0 min-h-screen">
             <h2 className="text-4xl text-center">Projects</h2>
 
-            <div className="overflow-x-auto scroll-hide md:w-full max-w-screen-sm mx-auto mt-6 flex justify-between items-center gap-2 md:gap-3 bg-white dark:bg-grey-800 p-2 rounded-md">
-                {displayCategories.map((c: string = "", i: number) => (
-                    <span key={i} onClick={() => filterProjects(c)} className={`p-1.5 md:p-2 w-full text-sm md:text-base text-center capitalize rounded-md ${category.toLowerCase() === c.toLowerCase() ? "bg-blue-600 text-white" : "hover:bg-gray-100 hover:dark:bg-grey-900"} cursor-pointer transition-all`}>
-                        {c}
-                    </span>
-                ))}
+            <div className="max-w-screen-sm mx-auto mt-6 space-y-4">
+                <input
+                    type="text"
+                    placeholder="Search projects..."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    className="w-full px-4 py-2 rounded-md bg-white dark:bg-grey-800 border border-gray-200 dark:border-grey-700 text-sm md:text-base focus:outline-none focus:ring-2 focus:ring-blue-600"
+                />
+                <div className="flex flex-wrap gap-2 justify-center">
+                    {filterKeywords.map((keyword) => (
+                        <button
+                            key={keyword}
+                            type="button"
+                            onClick={() => toggleKeyword(keyword)}
+                            className={`p-1.5 md:p-2 text-sm md:text-base rounded-md cursor-pointer transition-all ${
+                                selectedKeywords.has(keyword)
+                                    ? "bg-blue-600 text-white"
+                                    : "bg-white dark:bg-grey-800 hover:bg-gray-100 hover:dark:bg-grey-900"
+                            }`}
+                        >
+                            {keyword}
+                        </button>
+                    ))}
+                </div>
             </div>
 
             <div className="md:mx-6 lg:mx-auto lg:w-5/6 2xl:w-3/4 my-4 md:my-8 mx-auto grid md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-10">
-                {filteredProjects.slice(0, viewAll ? filteredProjects.length : 6).map((p: project, i: number) => (
-                    <ProjectCard key={i} {...p} />
+                {filteredProjects.map((p: project) => (
+                    <ProjectCard key={p.name} {...p} />
                 ))}
             </div>
-
-
-            {filteredProjects.length > 6
-                &&
-                <ViewAll scrollTo='projects' title={viewAll ? 'Okay, I got it' : 'View All'} handleClick={() => setViewAll(!viewAll)} />
-            }
         </SectionWrapper>
-    )
-}
+    );
+};
 
-export default Projects
+export default Projects;
 
 type MouseEventHandler = (event: React.MouseEvent<HTMLButtonElement>) => void;
 
@@ -83,5 +115,5 @@ export const ViewAll = ({ handleClick, title, scrollTo }: { handleClick: MouseEv
                 }
             </div>
         </>
-    )
-}
+    );
+};
