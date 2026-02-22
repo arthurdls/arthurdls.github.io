@@ -12,11 +12,10 @@ const Projects = ({ projectsData }: Props) => {
 
     const [projects, setProjects] = useState([...projectsData].reverse() as project[])
 
-    // const categories = ['All', ...Array.from(new Set(projects.map((s) => s.category)))]
-    const categories = [...Array.from(new Set(projects.map((s) => s.category)))]
+    // Merge "Deep Learning" into "Machine Learning" for display and filtering
+    const displayCategories = [...Array.from(new Set(projects.map((s) => s.category === "Deep Learning" ? "Machine Learning" : s.category)))]
 
-    // const [category, setCategory] = useState(categories[0] || "All")
-    const [category, setCategory] = useState(categories[0])
+    const [category, setCategory] = useState(displayCategories[0])
 
     const [filteredProjects, setFilteredProjects] = useState(projects as project[])
     const [viewAll, setViewAll] = useState(false)
@@ -24,12 +23,15 @@ const Projects = ({ projectsData }: Props) => {
     const filterProjects = (cat: string) => {
         setViewAll(false)
         setCategory(cat)
-        // cat === "All" ? setFilteredProjects(projects) :
-        setFilteredProjects(projects.filter((p: project) => p.category.toLowerCase() === cat.toLowerCase()));
+        if (cat.toLowerCase() === "machine learning") {
+            setFilteredProjects(projects.filter((p: project) => p.category === "Machine Learning" || p.category === "Deep Learning"));
+        } else {
+            setFilteredProjects(projects.filter((p: project) => p.category.toLowerCase() === cat.toLowerCase()));
+        }
     }
 
     useEffect(() => {
-        filterProjects(categories.includes('MERN Stack') ? "MERN Stack" : categories[0])
+        filterProjects(displayCategories.includes('MERN Stack') ? "MERN Stack" : displayCategories[0])
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
@@ -38,8 +40,8 @@ const Projects = ({ projectsData }: Props) => {
             <h2 className="text-4xl text-center">Projects</h2>
 
             <div className="overflow-x-auto scroll-hide md:w-full max-w-screen-sm mx-auto mt-6 flex justify-between items-center gap-2 md:gap-3 bg-white dark:bg-grey-800 p-2 rounded-md">
-                {categories.map((c: string = "", i: number) => (
-                    <span key={i} onClick={() => filterProjects(c)} className={`p-1.5 md:p-2 w-full text-sm md:text-base text-center capitalize rounded-md ${category.toLowerCase() === c.toLowerCase() ? "bg-violet-600 text-white" : "hover:bg-gray-100 hover:dark:bg-grey-900"} cursor-pointer transition-all`}>
+                {displayCategories.map((c: string = "", i: number) => (
+                    <span key={i} onClick={() => filterProjects(c)} className={`p-1.5 md:p-2 w-full text-sm md:text-base text-center capitalize rounded-md ${category.toLowerCase() === c.toLowerCase() ? "bg-blue-600 text-white" : "hover:bg-gray-100 hover:dark:bg-grey-900"} cursor-pointer transition-all`}>
                         {c}
                     </span>
                 ))}
@@ -70,13 +72,13 @@ export const ViewAll = ({ handleClick, title, scrollTo }: { handleClick: MouseEv
             <div className="bg-white dark:bg-grey-900 w-4/5 mx-auto blur-xl z-20 -translate-y-14 h-16"></div>
             <div className="text-center -translate-y-24">
                 {title === 'View All' ?
-                    <button onClick={handleClick} className={`bg-violet-600 text-white px-4 ${title === 'View All' ? 'animate-bounce' : 'animate-none'} py-1.5 rounded-md hover:shadow-xl transition-all`}>
+                    <button onClick={handleClick} className={`bg-blue-600 text-white px-4 ${title === 'View All' ? 'animate-bounce' : 'animate-none'} py-1.5 rounded-md hover:shadow-xl transition-all`}>
                         {title}
                     </button>
                     :
                     <Link
                         to={scrollTo}
-                        className={`bg-violet-600 text-white px-4 ${title === 'View All' ? 'animate-bounce' : 'animate-none'} cursor-pointer py-1.5 rounded-md hover:shadow-xl transition-all`}
+                        className={`bg-blue-600 text-white px-4 ${title === 'View All' ? 'animate-bounce' : 'animate-none'} cursor-pointer py-1.5 rounded-md hover:shadow-xl transition-all`}
                         offset={-60}
                         smooth={true}
                         duration={500}

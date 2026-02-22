@@ -36,7 +36,7 @@ const Hero = ({ mainData }: HeroProps) => {
 
             <div className="py-16 lg:py-48 flex flex-col-reverse lg:flex-row justify-around gap-10 lg:gap-0">
 
-                <div className="flex flex-col gap-4 md:gap-6 text-left lg:w-1/2 2xl:w-1/3 mx-4 md:mx-6 xl:mx-0">
+                <div className="flex flex-col gap-4 md:gap-6 text-left lg:w-3/5 2xl:w-1/2 mx-4 md:mx-6 xl:mx-0">
                     <div className="flex items-center gap-1">
                         <Image unoptimized={true} alt='waving-hand' width={30} height={30} src={wavingHand} />
                         <p className="text-lg md:text-xl mt-2 md:mt-1.5">
@@ -57,22 +57,22 @@ const Hero = ({ mainData }: HeroProps) => {
                                 loop: true,
                                 deleteSpeed: 50,
                                 delay: 50,
-                                wrapperClassName: "text-violet-700 dark:text-violet-600 text-lg md:text-2xl font-medium",
-                                cursorClassName: "text-violet-700 dark:text-violet-600 text-lg md:text-2xl"
+                                wrapperClassName: "text-blue-700 dark:text-blue-600 text-lg md:text-2xl font-medium",
+                                cursorClassName: "text-blue-700 dark:text-blue-600 text-lg md:text-2xl"
                             }}
                         />
                     </div>
 
-                    <p className='text-sm md:text-base text-gray-600 dark:text-gray-300'>
+                    <p className='text-sm md:text-base text-gray-600 dark:text-gray-300 lg:w-3/5 2xl:w-1/2'>
                         {shortDesc}
                     </p>
 
-                    {/* <a href="https://sppuprep.tech" target="_blank" rel="noopener noreferrer" className="relative whitespace-nowrap before:absolute before:bottom-0 before:left-0 before:h-full before:w-full before:origin-bottom before:scale-y-[0.35] hover:before:scale-y-100 before:transition-transform before:ease-in-out before:duration-500 before:bg-violet-300 dark:before:bg-violet-600">
+                    {/* <a href="https://sppuprep.tech" target="_blank" rel="noopener noreferrer" className="relative whitespace-nowrap before:absolute before:bottom-0 before:left-0 before:h-full before:w-full before:origin-bottom before:scale-y-[0.35] hover:before:scale-y-100 before:transition-transform before:ease-in-out before:duration-500 before:bg-blue-300 dark:before:bg-blue-600">
                         <span className="relative">SPPU Prep</span>
                     </a> */}
 
                     <ScrollLink
-                        className="w-fit text-sm md:text-base py-2 px-4 cursor-pointer flex items-center gap-1 rounded-md bg-violet-600 hover:bg-violet-700 dark:bg-violet-700 hover:dark:bg-violet-800 transition-colors group text-white"
+                        className="w-fit text-sm md:text-base py-2 px-4 cursor-pointer flex items-center gap-1 rounded-md bg-blue-600 hover:bg-blue-700 dark:bg-blue-700 hover:dark:bg-blue-800 transition-colors group text-white"
                         to={'about'}
                         offset={-60}
                         smooth={true}

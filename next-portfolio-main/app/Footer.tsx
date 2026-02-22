@@ -24,7 +24,7 @@ export default function Footer({ socials, name }: { socials: social[], name: str
                 <p className="text-sm mt-2 md:mt-0">Made with
                     <span className="animate-pulse"> ❤️ </span>
                     by
-                    <span className="text-violet-600"> {name}</span></p>
+                    <span className="text-blue-600"> {name}</span></p>
 
                 <div className="hidden xl:flex items-center gap-2">
                     <Link href={'https://nextjs.org'} target="_blank">
@@ -45,6 +45,15 @@ export default function Footer({ socials, name }: { socials: social[], name: str
                     ))}
                 </div>
 
+            </div>
+
+            <div className="xl:max-w-6xl mx-auto md:mx-6 lg:mx-10 xl:mx-auto pb-4 text-center">
+                <p className="text-xs text-gray-400 dark:text-gray-500">
+                    Portfolio template by{" "}
+                    <Link href="https://github.com/jigar-sable/next-portfolio" target="_blank" rel="noreferrer" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                        jigar-sable/next-portfolio
+                    </Link>
+                </p>
             </div>
 
         </footer>
