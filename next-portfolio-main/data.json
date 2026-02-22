@@ -39,23 +39,53 @@
   ],
   "skills": [
     {
-      "name": "Python (NumPy, PyTorch, TensorFlow, Keras, Pandas)",
+      "name": "Python",
       "image": "https://img.icons8.com/color/144/null/python.png",
-      "category": "Languages & Libraries"
+      "category": "Languages"
     },
     {
-      "name": "TypeScript/JavaScript",
+      "name": "PyTorch",
+      "image": "https://cdn.simpleicons.org/pytorch",
+      "category": "Languages"
+    },
+    {
+      "name": "TensorFlow",
+      "image": "https://cdn.simpleicons.org/tensorflow",
+      "category": "Languages"
+    },
+    {
+      "name": "TypeScript",
+      "image": "https://img.icons8.com/color/144/null/typescript.png",
+      "category": "Languages"
+    },
+    {
+      "name": "JavaScript",
       "image": "https://img.icons8.com/color/144/null/javascript--v1.png",
       "category": "Languages"
     },
     {
-      "name": "C, C++",
+      "name": "C",
+      "image": "https://img.icons8.com/color/144/null/c-programming.png",
+      "category": "Languages"
+    },
+    {
+      "name": "C++",
       "image": "https://img.icons8.com/color/144/null/c-plus-plus-logo.png",
       "category": "Languages"
     },
     {
-      "name": "Linux, ROS2, OpenCV",
+      "name": "Go",
+      "image": "https://cdn.simpleicons.org/go",
+      "category": "Languages"
+    },
+    {
+      "name": "Linux",
       "image": "https://img.icons8.com/color/144/null/linux.png",
+      "category": "Tools"
+    },
+    {
+      "name": "ROS2",
+      "image": "https://cdn.simpleicons.org/ros",
       "category": "Tools"
     }
   ],
