@@ -72,7 +72,7 @@ const Hero = ({ mainData }: HeroProps) => {
                     </a> */}
 
                     <ScrollLink
-                        className="w-fit text-sm md:text-base py-2 px-4 cursor-pointer flex items-center gap-1 rounded-md bg-blue-600 hover:bg-blue-700 dark:bg-blue-700 hover:dark:bg-blue-800 transition-colors group text-white"
+                        className="btn-theme w-fit text-sm md:text-base py-2 px-4 cursor-pointer flex items-center gap-1 group"
                         to={'about'}
                         offset={-60}
                         smooth={true}

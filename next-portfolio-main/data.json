@@ -17,7 +17,7 @@
   },
   "about": {
     "aboutImage": "/self_image_1.jpg",
-    "aboutImageCaption": "< I build stuff 🚀/>",
+    "aboutImageCaption": " ",
     "title": "Computer Science & Engineering Student",
     "about": "Candidate for S.B. in Computer Science and Engineering (GPA: 4.9/5.0) and accepted to M.Eng. at the Massachusetts Institute of Technology. Experienced in Python, TypeScript/JavaScript, C++, and ROS2.",
     "callUrl": "tel:617-981-5412",
@@ -143,16 +143,19 @@
     {
       "institute": "Massachusetts Institute of Technology (MIT), Cambridge, MA",
       "degree": "Candidate for S.B. in Computer Science and Engineering",
-      "duration": "Expected May 2026"
+      "duration": "Expected May 2026",
+      "desc": [
+        "Relevant Coursework: Dicrete Mathematics, Fundamentals of Programming, Software Construction, Algorithms I and II",
+        "Low-level Programming, Computation Structures, Computer Systems Engineering, Distributed Computer Systems Engineering, Computer Systems Security",
+        "Probability, Multivariable Calculus, Machine Learning, Natural Language Processing, Multimodal AI"
+      ]
     },
     {
       "institute": "Massachusetts Institute of Technology (MIT), Cambridge, MA",
       "degree": "Accepted to M.Eng. in Computer Science and Engineering",
       "duration": "Expected February 2027",
       "desc": [
-        "Relevant Coursework: Algorithms I and II, Software Construction, Machine Learning, Multivariable Calculus, Linear Algebra, Probability, Fundamentals of Statistics",
-        "Low-level Programming, Computation Structures, Computer Systems Engineering, Natural Language Processing, Advances in Computer Vision, Robotic Manipulation",
-        "Statistical Learning Theory, Numerical Algorithms for ML, Distributed Computer Systems Engineering, Computer Systems Security, Multimodal AI"
+        "Relevant Coursework: Linear Algebra and Optimization, Fundamentals of Statistics, Numerical Algorithms for ML, Robotic Manipulation, Statistical Learning Theory, Advances in Computer Vision"
       ]
     }
   ],

@@ -40,17 +40,17 @@ const Project = ({ name, image, category, keywords, links, onClick }: ProjectCar
                 {(links.visit.trim() || links.code.trim() || links.video.trim()) &&
                     <div className="absolute top-0 scale-x-0 group-hover:scale-100 transition-transform origin-left duration-200 ease-linear bg-gray-800 bg-opacity-60 w-full h-full rounded-lg flex items-center gap-4 justify-center">
                         {links.visit.trim() &&
-                            <Link href={links.visit} target="_blank" onClick={(e) => e.stopPropagation()} className="bg-white text-black p-2 rounded-lg hover:bg-black hover:text-white transition-all">
+                            <Link href={links.visit} target="_blank" onClick={(e) => e.stopPropagation()} className="btn-theme p-2 rounded-lg">
                                 <BiLinkExternal size={20} />
                             </Link>
                         }
                         {links.code.trim() &&
-                            <Link href={links.code} target="_blank" onClick={(e) => e.stopPropagation()} className="bg-white text-black p-2 rounded-lg hover:bg-black hover:text-white transition-all">
+                            <Link href={links.code} target="_blank" onClick={(e) => e.stopPropagation()} className="btn-theme p-2 rounded-lg">
                                 <FaGithub size={20} />
                             </Link>
                         }
                         {links.video.trim() &&
-                            <Link href={links.video} target="_blank" onClick={(e) => e.stopPropagation()} className="bg-white text-black p-2 rounded-lg hover:bg-black hover:text-white transition-all">
+                            <Link href={links.video} target="_blank" onClick={(e) => e.stopPropagation()} className="btn-theme p-2 rounded-lg">
                                 <FaVideo size={20} />
                             </Link>
                         }

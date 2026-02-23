@@ -73,10 +73,10 @@ const Projects = ({ projectsData }: Props) => {
                             key={keyword}
                             type="button"
                             onClick={() => toggleKeyword(keyword)}
-                            className={`p-1.5 md:p-2 text-sm md:text-base rounded-md cursor-pointer transition-all ${
+                            className={`p-1.5 md:p-2 text-sm md:text-base rounded-xl cursor-pointer transition-all ${
                                 selectedKeywords.has(keyword)
-                                    ? "bg-blue-600 text-white"
-                                    : "bg-white dark:bg-grey-800 hover:bg-gray-100 hover:dark:bg-grey-900"
+                                    ? "btn-theme"
+                                    : "bg-white dark:bg-grey-800 hover:bg-gray-100 hover:dark:bg-grey-900 border border-transparent"
                             }`}
                         >
                             {keyword}
@@ -145,17 +145,17 @@ const Projects = ({ projectsData }: Props) => {
                                 {(selectedProject.links.visit.trim() || selectedProject.links.code.trim() || selectedProject.links.video.trim()) && (
                                     <div className="flex gap-3 pt-2">
                                         {selectedProject.links.visit.trim() && (
-                                            <LinkNext href={selectedProject.links.visit} target="_blank" className="flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors">
+                                            <LinkNext href={selectedProject.links.visit} target="_blank" className="btn-theme flex items-center gap-2 px-4 py-2">
                                                 <BiLinkExternal size={18} /> Visit
                                             </LinkNext>
                                         )}
                                         {selectedProject.links.code.trim() && (
-                                            <LinkNext href={selectedProject.links.code} target="_blank" className="flex items-center gap-2 bg-gray-800 text-white px-4 py-2 rounded-md hover:bg-gray-900 transition-colors">
+                                            <LinkNext href={selectedProject.links.code} target="_blank" className="btn-theme flex items-center gap-2 px-4 py-2">
                                                 <FaGithub size={18} /> Code
                                             </LinkNext>
                                         )}
                                         {selectedProject.links.video.trim() && (
-                                            <LinkNext href={selectedProject.links.video} target="_blank" className="flex items-center gap-2 bg-gray-800 text-white px-4 py-2 rounded-md hover:bg-gray-900 transition-colors">
+                                            <LinkNext href={selectedProject.links.video} target="_blank" className="btn-theme flex items-center gap-2 px-4 py-2">
                                                 <FaVideo size={18} /> Video
                                             </LinkNext>
                                         )}
@@ -180,13 +180,13 @@ export const ViewAll = ({ handleClick, title, scrollTo }: { handleClick: MouseEv
             <div className="bg-white dark:bg-grey-900 w-4/5 mx-auto blur-xl z-20 -translate-y-14 h-16"></div>
             <div className="text-center -translate-y-24">
                 {title === 'View All' ?
-                    <button onClick={handleClick} className={`bg-blue-600 text-white px-4 ${title === 'View All' ? 'animate-bounce' : 'animate-none'} py-1.5 rounded-md hover:shadow-xl transition-all`}>
+                    <button onClick={handleClick} className={`btn-theme px-4 ${title === 'View All' ? 'animate-bounce' : 'animate-none'} py-1.5`}>
                         {title}
                     </button>
                     :
                     <Link
                         to={scrollTo}
-                        className={`bg-blue-600 text-white px-4 ${title === 'View All' ? 'animate-bounce' : 'animate-none'} cursor-pointer py-1.5 rounded-md hover:shadow-xl transition-all`}
+                        className={`btn-theme px-4 ${title === 'View All' ? 'animate-bounce' : 'animate-none'} cursor-pointer py-1.5`}
                         offset={-60}
                         smooth={true}
                         duration={500}

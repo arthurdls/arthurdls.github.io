@@ -96,7 +96,7 @@ export default function Header({ logo }: { logo: string }) {
                         smooth={true}
                         duration={500}
                         onClick={() => setNavCollapse(true)}
-                        className='px-6 py-1.5 rounded-md bg-blue-600 hover:bg-blue-700 text-white text-center'>
+                        className='btn-theme px-6 py-1.5 text-center'>
                         Contact
                     </ScrollLink>
                 </div>
