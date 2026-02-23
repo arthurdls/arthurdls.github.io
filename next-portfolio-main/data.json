@@ -91,11 +91,23 @@
   ],
   "projects": [
     {
-      "name": "Robust Vision-Language Navigation",
-      "category": "Research",
-      "description": "Research on adaptive vision-language navigation systems that combine perception, reasoning, and human feedback to improve robustness and trust in real-world human-robot interaction.",
-      "keywords": ["ML", "Robotics", "Perception", "Python"],
-      "image": "https://media.geeksforgeeks.org/wp-content/cdn-uploads/20210114225740/10-Best-Web-Development-Project-Ideas-For-Beginners-in-2021.png",
+      "name": "Arcturus RoboBoat 2025",
+      "category": "Autonomous Systems",
+      "description": "Autonomous marine robotics competition project using ROS2 and computer vision (YOLOv8) for navigation and object detection in water.",
+      "keywords": ["C++", "Python", "Robotics", "ROS2", "Linux", "ML"],
+      "image": "/project_images/arcturus.jpg",
+      "links": {
+        "code": "",
+        "video": "",
+        "visit": ""
+      }
+    },
+    {
+      "name": "Deep Learning for Diabetic Retinopathy",
+      "category": "Machine Learning",
+      "description": "Applied deep learning for retina disease screening, optimizing and extending machine learning algorithms using open-source Python libraries such as Keras and TensorFlow.",
+      "keywords": ["ML", "Python", "TensorFlow", "Keras"],
+      "image": "/project_images/deep_learning.png",
       "links": {
         "code": "",
         "video": "",
@@ -107,7 +119,7 @@
       "category": "Machine Learning",
       "description": "Re-implemented transformer model from paper in TensorFlow; trained on standard dataset achieving 96%+ classification accuracy with 5-fold cross-validation for biosignal-based health diagnostics.",
       "keywords": ["ML", "Python", "TensorFlow"],
-      "image": "https://media.geeksforgeeks.org/wp-content/cdn-uploads/20210114225740/10-Best-Web-Development-Project-Ideas-For-Beginners-in-2021.png",
+      "image": "/project_images/signal_translation.png",
       "links": {
         "code": "",
         "video": "",
@@ -115,23 +127,11 @@
       }
     },
     {
-      "name": "Deep Learning for Diabetic Retinopathy",
-      "category": "Data Science",
-      "description": "Applied deep learning for retina disease screening, optimizing and extending machine learning algorithms using open-source Python libraries such as Keras and TensorFlow.",
-      "keywords": ["ML", "Python", "TensorFlow", "Keras"],
-      "image": "https://media.geeksforgeeks.org/wp-content/cdn-uploads/20210114225740/10-Best-Web-Development-Project-Ideas-For-Beginners-in-2021.png",
-      "links": {
-        "code": "",
-        "video": "",
-        "visit": ""
-      }
-    },
-    {
-      "name": "Arcturus RoboBoat 2025",
+      "name": "Robust Vision-Language Navigation",
       "category": "Autonomous Systems",
-      "description": "Autonomous marine robotics competition project using ROS2 and computer vision (YOLOv8) for navigation and object detection in water.",
-      "keywords": ["C++", "Python", "Robotics", "ROS2", "Linux", "ML"],
-      "image": "https://media.geeksforgeeks.org/wp-content/cdn-uploads/20210114225740/10-Best-Web-Development-Project-Ideas-For-Beginners-in-2021.png",
+      "description": "Research on adaptive vision-language navigation systems that combine perception, reasoning, and human feedback to improve robustness and trust in real-world human-robot interaction.",
+      "keywords": ["ML", "Robotics", "Perception", "Python"],
+      "image": "/project_images/vision_language_navigation.png",
       "links": {
         "code": "",
         "video": "",
