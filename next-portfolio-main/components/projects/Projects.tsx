@@ -101,15 +101,23 @@ const Projects = ({ projectsData }: Props) => {
                         onClick={() => setSelectedProject(null)}
                     >
                         <motion.div
-                            className="bg-white dark:bg-grey-800 rounded-lg max-w-2xl w-full max-h-[90vh] overflow-hidden flex flex-col shadow-xl"
+                            className="relative bg-white dark:bg-grey-800 rounded-lg max-w-2xl w-full max-h-[90vh] overflow-hidden flex flex-col shadow-xl"
                             initial={{ scale: 0.95, opacity: 0 }}
                             animate={{ scale: 1, opacity: 1 }}
                             exit={{ scale: 0.95, opacity: 0 }}
                             transition={{ duration: 0.2 }}
                             onClick={(e) => e.stopPropagation()}
                         >
-                            <div className="relative flex-shrink-0">
-                                <div className="w-full h-40 md:aspect-video md:h-auto relative bg-blue-50 dark:bg-grey-700">
+                            <button
+                                type="button"
+                                className="absolute top-2 right-2 z-10 p-2 rounded-full bg-black/50 text-white hover:bg-black/70 transition-colors"
+                                onClick={() => setSelectedProject(null)}
+                                aria-label="Close"
+                            >
+                                <BiX size={24} />
+                            </button>
+                            <div className="p-0 overflow-y-auto flex-1 min-h-0 space-y-0">
+                                <div className="w-full h-40 md:aspect-video md:h-auto relative bg-blue-50 dark:bg-grey-700 flex-shrink-0">
                                     <Image
                                         alt={selectedProject.name}
                                         src={selectedProject.image}
@@ -117,16 +125,7 @@ const Projects = ({ projectsData }: Props) => {
                                         className="object-cover object-top"
                                     />
                                 </div>
-                                <button
-                                    type="button"
-                                    className="absolute top-2 right-2 p-2 rounded-full bg-black/50 text-white hover:bg-black/70 transition-colors"
-                                    onClick={() => setSelectedProject(null)}
-                                    aria-label="Close"
-                                >
-                                    <BiX size={24} />
-                                </button>
-                            </div>
-                            <div className="p-6 overflow-y-auto flex-1 min-h-0 space-y-4">
+                                <div className="p-6 space-y-4">
                                 <h3 className="text-2xl font-medium">{selectedProject.name}</h3>
                                 <p className="text-sm text-gray-500 dark:text-gray-400 capitalize">{selectedProject.category}</p>
                                 <p className="text-gray-600 dark:text-gray-300 whitespace-pre-wrap">{selectedProject.description}</p>
@@ -161,6 +160,7 @@ const Projects = ({ projectsData }: Props) => {
                                         )}
                                     </div>
                                 )}
+                                </div>
                             </div>
                         </motion.div>
                     </motion.div>
